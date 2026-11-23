@@ -13,6 +13,7 @@ In addition to developing Power BI dashboards, I create technical documentation 
 ## Featured Projects
 
 > Click each project to expand details. 
+
 > For more detailed information on each platform visit my site here! https://joscnaa.github.io/Portfolio/
 
 <details>
