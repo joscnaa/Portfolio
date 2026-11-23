@@ -217,6 +217,74 @@
       border-top: 1px solid var(--border);
     }
 
+    .preview img,
+    .gallery img {
+      cursor: zoom-in;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(3, 7, 18, 0.84);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-dialog {
+      position: relative;
+      width: min(1100px, 100%);
+      max-height: 92vh;
+      display: grid;
+      gap: 0.55rem;
+      justify-items: center;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      border: 1px solid #3b4f8f;
+      border-radius: 999px;
+      width: 2.05rem;
+      height: 2.05rem;
+      background: rgba(9, 15, 33, 0.95);
+      color: #f2f4ff;
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(18, 28, 58, 0.97);
+    }
+
+    .lightbox-image {
+      width: 100%;
+      max-width: min(1080px, 100%);
+      max-height: 83vh;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid #334378;
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.42);
+      background: #0b1020;
+    }
+
+    .lightbox-caption {
+      margin: 0;
+      text-align: center;
+      color: #d5dbf3;
+      font-size: 0.9rem;
+      max-width: 92ch;
+    }
+
     .contact {
       margin-top: 2rem;
       padding: 1.1rem 1.2rem;
@@ -244,6 +312,15 @@
     @media (max-width: 740px) {
       .focus-list {
         columns: 1;
+      }
+
+      .lightbox-image {
+        max-height: 74vh;
+      }
+
+      .lightbox-close {
+        top: 0.75rem;
+        right: 0.75rem;
       }
     }
   </style>
@@ -845,5 +922,74 @@
 
     <footer>Thanks for visiting my Business Analytics Portfolio.</footer>
   </main>
+
+  <div class="lightbox" id="imageLightbox" aria-hidden="true">
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Expanded image preview">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image preview">×</button>
+      <img class="lightbox-image" id="lightboxImage" src="" alt="Expanded portfolio preview" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const lightbox = document.getElementById("imageLightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const clickableImages = document.querySelectorAll(".preview img, .gallery img");
+
+      if (!lightbox || !lightboxImage || !lightboxCaption || !lightboxClose || !clickableImages.length) return;
+
+      const getCaptionText = (img) => {
+        const figure = img.closest("figure");
+        const caption = figure ? figure.querySelector("figcaption") : null;
+        return (caption && caption.textContent ? caption.textContent : img.alt || "Expanded portfolio image").trim();
+      };
+
+      const openLightbox = (img) => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || "Expanded portfolio image";
+        lightboxCaption.textContent = getCaptionText(img);
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        lightboxCaption.textContent = "";
+        document.body.style.overflow = "";
+      };
+
+      clickableImages.forEach((img) => {
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+        img.setAttribute("aria-label", `Expand image: ${img.alt || "Portfolio preview"}`);
+
+        img.addEventListener("click", () => openLightbox(img));
+        img.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openLightbox(img);
+          }
+        });
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("open")) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
