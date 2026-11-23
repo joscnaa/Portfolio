@@ -15,7 +15,7 @@ In addition to developing Power BI dashboards, I create technical documentation 
 > Click each project to expand details.
 
 <details>
-  <summary><strong>Project #1 — Customer Satisfaction & Quality Assurance Analytics Platform</strong></summary>
+  <summary><strong>Platform #1 — Customer Satisfaction & Quality Assurance Analytics Platform</strong></summary>
 
   ### Preview
   ![Survey Dashboard](survey.png)
@@ -31,7 +31,7 @@ In addition to developing Power BI dashboards, I create technical documentation 
 </details>
 
 <details>
-  <summary><strong>Project #2 — Workforce Performance Management & Stack Ranking Platform</strong></summary>
+  <summary><strong>Platform #2 — Workforce Performance Management & Stack Ranking Platform</strong></summary>
 
    ### Preview
   ![Stack Ranking](stackrank.png)
@@ -47,7 +47,7 @@ In addition to developing Power BI dashboards, I create technical documentation 
 </details>
 
 <details>
-  <summary><strong>Project #3 — Attendance Occurrence Management & Workforce Accountability Platform</strong></summary>
+  <summary><strong>Platform #3 — Attendance Occurrence Management & Workforce Accountability Platform</strong></summary>
 
   ### Preview
   ![Occurrences Report](occurrences.png)
@@ -64,7 +64,7 @@ In addition to developing Power BI dashboards, I create technical documentation 
 </details>
 
 <details>
-  <summary><strong>Project #4 — Workforce Scheduling & Staffing Visibility Platform</strong></summary>
+  <summary><strong>Platform #4 — Workforce Scheduling & Staffing Visibility Platform</strong></summary>
 
   ### Preview
   ![Scheduling Report](schedule.png)
@@ -82,7 +82,7 @@ In addition to developing Power BI dashboards, I create technical documentation 
 </details>
 
 <details>
-  <summary><strong>Project #5 — PTO & Time Off Management Analytics Platform</strong></summary>
+  <summary><strong>Platform #5 — PTO & Time Off Management Analytics Platform</strong></summary>
 
   ### Preview
   ![PTO Report](calendar.png)
