@@ -1,5 +1,3 @@
-# Portfolio
-
 # Josue Cano — Portfolio
 
 Hello! I'm **Josue Cano**, a Workforce Management Analyst, Technical Support Professional, and Power BI Developer passionate about transforming data into meaningful business insights.
