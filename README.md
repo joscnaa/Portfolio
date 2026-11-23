@@ -104,5 +104,7 @@ In addition to developing Power BI dashboards, I create technical documentation 
 ---
 
 ## Contact
-If you'd like to connect or collaborate, feel free to reach out through GitHub.
+If you'd like to connect or collaborate, feel free to reach out via email at joscan555@gmail.com or connect with me on LinkedIn at www.linkedin.com/in/josuecano0817
+
+Thank you for visiting my Business Analytics Portfolio! 
 
