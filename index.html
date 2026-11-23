@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josue Cano | Technical Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Josue Cano featuring workforce management, customer experience analytics, and Power BI reporting platforms."
+  />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151b33;
+      --panel-2: #1b2342;
+      --text: #e9ecf8;
+      --muted: #b5bdd9;
+      --accent: #6fa8ff;
+      --accent-2: #8de2c4;
+      --border: #2a3564;
+      --shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      background: radial-gradient(circle at top, #1a2350 0%, var(--bg) 45%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1040px, 92%);
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    .hero {
+      background: linear-gradient(155deg, rgba(111, 168, 255, 0.18), rgba(141, 226, 196, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      margin: 0 0 1.2rem;
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+
+    .hero p {
+      margin: 0.7rem 0;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    }
+
+    .section-note {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 0.95rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    details[open] {
+      background: var(--panel-2);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 1rem 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: "▸";
+      color: var(--accent);
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .card-content {
+      padding: 0 1.1rem 1.1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .preview {
+      margin-top: 0.9rem;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #0f1735;
+    }
+
+    .preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .focus-list {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+      columns: 2;
+      column-gap: 2rem;
+    }
+
+    .focus-list li {
+      margin-bottom: 0.35rem;
+      break-inside: avoid;
+    }
+
+    .case-study {
+      color: var(--muted);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .case-study h3,
+    .case-study h4 {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .case-study h3 {
+      margin-top: 0.2rem;
+      font-size: 1.1rem;
+    }
+
+    .case-study h4 {
+      margin-top: 0.2rem;
+      font-size: 1rem;
+      color: var(--accent-2);
+    }
+
+    .case-study p {
+      margin: 0.15rem 0 0;
+    }
+
+    .stack {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .meta-list {
+      margin: 0;
+      padding-left: 1.15rem;
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .gallery figure {
+      margin: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0f1735;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 155px;
+      object-fit: cover;
+    }
+
+    .gallery figcaption {
+      font-size: 0.82rem;
+      color: #9eadd8;
+      padding: 0.45rem 0.55rem 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact {
+      margin-top: 2rem;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(16, 22, 43, 0.72);
+    }
+
+    .contact a {
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 1.1rem;
+      color: #9ca7ce;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 740px) {
+      .focus-list {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero" aria-label="Introduction">
+      <h1>Josue Cano — Business Analytics Portfolio</h1>
+      <p class="subtitle">Workforce Management Analyst • Technical Writer • Power BI Developer</p>
+      <p>
+        I’m passionate about transforming data into meaningful business insights. My background spans Technical
+        Support, Workforce Management, Customer Experience Analytics, and Technical Documentation.
+      </p>
+      <p>
+        I build end-to-end reporting solutions that automate manual processes, improve operational visibility, and
+        support data-driven decision-making for leadership and frontline teams.
+      </p>
+    </section>
+
+    <section aria-label="Featured Projects">
+      <h2>Featured Platforms</h2>
+      <p class="section-note">Click each platform to expand preview and focus areas.</p>
+
+      <details>
+        <summary>Platform #1 — Customer Satisfaction &amp; Quality Assurance Analytics Platform</summary>
+        <div class="card-content">
+          <div class="preview">
+            <img src="survey.png" alt="Customer satisfaction and quality assurance dashboard preview" />
+          </div>
+          <ul class="focus-list">
+            <li>CSAT Reporting</li>
+            <li>Survey Analytics</li>
+            <li>Quality Assurance</li>
+            <li>Agent Performance</li>
+            <li>Semantic Modeling</li>
+            <li>DAX Development</li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <article class="case-study" aria-label="Platform 1 detailed case study">
+            <div class="stack">
+              <h3>Detailed Case Study</h3>
+              <p>
+                This Power BI solution gives leadership a centralized view of customer satisfaction survey performance
+                across both U.S. and India support centers. It combines CSAT outcomes, team-level trends, and quality
+                assurance validations to support faster coaching and decision-making.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Objective</h4>
+              <p>
+                Evaluate customer feedback across support centers, identify top-performing agents, and provide
+                actionable insights that improve service quality and customer satisfaction.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Main Dashboard — Executive CSAT &amp; Survey Monitoring</h4>
+              <ul class="meta-list">
+                <li>Cross-center comparisons for survey volume, completion rates, and pending reviews.</li>
+                <li>Center-level CSAT and overall organizational CSAT tracking.</li>
+                <li>Top-performing agent identification based on customer ratings.</li>
+                <li>Monthly trend filtering for leadership-level performance monitoring.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Tab 2 — Agent Performance &amp; Quality Review</h4>
+              <ul class="meta-list">
+                <li>Agent ranking from highest to lowest average survey rating.</li>
+                <li>Survey-level drilldown (Survey 1 and Survey 2 responses by interaction).</li>
+                <li>Review workflow visibility (reviewed vs. pending and valid vs. invalid outcomes).</li>
+                <li>Conditional status categories for coaching prioritization: Excellent, Average, Needs Improvement.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Tab 3 — Team Lead Review &amp; QA Governance</h4>
+              <ul class="meta-list">
+                <li>Reviewer-level activity tracking for Team Leads and managers.</li>
+                <li>Audit visibility into comments, findings, and root-cause context.</li>
+                <li>Completion and backlog KPIs to improve review accountability and cycle time.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Semantic Model &amp; Data Architecture</h4>
+              <ul class="meta-list">
+                <li>Dimensional model with one-to-many relationships and dedicated calendar table.</li>
+                <li>Reusable DAX measures for CSAT, completion %, rankings, and QA status indicators.</li>
+                <li>Power Query transformations for data cleansing, normalization, and maintainability.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Key Metrics Tracked</h4>
+              <ul class="meta-list">
+                <li>Total Surveys, Completed Surveys, Pending Reviews, and Completion %</li>
+                <li>Center-Level CSAT %, Overall CSAT %, and Average Survey Ratings</li>
+                <li>Agent Ranking, Performance Status, and QA Validation Outcomes</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Business Impact</h4>
+              <p>
+                The platform improved visibility into customer experience and quality validation, enabling targeted
+                coaching, stronger accountability, and more accurate performance measurement across global support
+                operations.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Additional Screens</h4>
+              <div class="gallery">
+                <figure>
+                  <img src="imagesur1.png" alt="Platform 1 dashboard view of survey KPIs and center trends" />
+                  <figcaption>Executive view: Performance Classification: Excellent.</figcaption>
+                </figure>
+                <figure>
+                  <img src="imagesur2.png" alt="Platform 2 dashboard view of survey KPIs and center trends" />
+                  <figcaption>Executive view: Performance Classification: Good.</figcaption>
+                </figure>
+                <figure>
+                  <img src="imagesur3.png" alt="Platform 3 dashboard view of survey KPIs and center trends" />
+                  <figcaption>Executive view: Performance Classification: Average.</figcaption>
+                </figure>
+                <figure>
+                  <img src="imagesur4.png" alt="Platform 4 dashboard view of survey KPIs and center trends" />
+                  <figcaption>Executive view: Performance Classification: Needs Improvement.</figcaption>
+                </figure>
+                <figure>
+                  <img src="teamleadsur.png" alt="Team lead quality review dashboard view" />
+                  <figcaption>QA review workflow: reviewer outcomes, comments, and validation tracking.</figcaption>
+                </figure>
+                <figure>
+                  <img src="sur-semantic.png" alt="Semantic model diagram for customer survey reporting" />
+                  <figcaption>Semantic model: reusable measures and dimensional structure for consistency.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details>
+        <summary>Platform #2 — Workforce Performance Management &amp; Stack Ranking Platform</summary>
+        <div class="card-content">
+          <div class="preview">
+            <img src="stackrank.png" alt="Workforce stack ranking and performance dashboard preview" />
+          </div>
+          <ul class="focus-list">
+            <li>Workforce Analytics</li>
+            <li>Performance Management</li>
+            <li>Coaching Analytics</li>
+            <li>KPI Automation</li>
+            <li>Operational Reporting</li>
+            <li>Workforce Scorecards</li>
+          </ul>
+        </div>
+
+        <div class="card-content">
+          <article class="case-study" aria-label="Platform 2 detailed case study">
+            <div class="stack">
+              <h3>Detailed Case Study</h3>
+              <p>
+                This platform provides leadership with a centralized, automated workforce performance framework for
+                monthly business reviews, ranking analysis, and targeted coaching across support organizations.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Objective</h4>
+              <p>
+                Standardize agent performance evaluation across teams, improve ranking consistency, and give managers
+                actionable insights for coaching and operational improvements.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Dashboard Page 1 — Performance Rankings Overview</h4>
+              <ul class="meta-list">
+                <li>Automated stack ranking from operational performance metrics.</li>
+                <li>Cross-team comparisons across U.S., India, Tier 2, and departmental groups.</li>
+                <li>Interactive month filtering for historical trend analysis.</li>
+                <li>Performance heat mapping to quickly surface strengths and risk areas.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Dashboard Page 2 — Agent Coaching &amp; Performance Insights</h4>
+              <ul class="meta-list">
+                <li>Agent-level scorecards with drilldown into operational categories.</li>
+                <li>Dynamic rating classifications to improve readability and faster decisions.</li>
+                <li>Color-coded indicators for top performers, consistent performers, and coaching needs.</li>
+                <li>Insights designed to support growth conversations and targeted development plans.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Business Questions Answered</h4>
+              <ul class="meta-list">
+                <li>Which agents need immediate coaching attention?</li>
+                <li>Which performance categories influence ranking outcomes the most?</li>
+                <li>Are coaching initiatives improving month-over-month performance?</li>
+                <li>Are performance issues isolated to specific teams or distributed broadly?</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Semantic Model &amp; Data Architecture</h4>
+              <p>
+                A centralized Power BI semantic model consolidates agent metrics from multiple operational sources and
+                powers all KPIs, rankings, performance classifications, and visualizations. Centralized logic ensures
+                consistency across report pages while supporting analysis from multiple business perspectives.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Impact</h4>
+              <p>
+                The solution reduced manual ranking effort, improved consistency in performance reviews, and enabled
+                faster leadership decisions through transparent workforce analytics and coaching visibility.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Additional Screens</h4>
+              <div class="gallery">
+                <figure>
+                  <img src="stack2.png" alt="Platform 2 dashboard view showing top performers and rank distribution" />
+                  <figcaption>Ranking overview: top performers, opportunities, and outlier detection.</figcaption>
+                </figure>
+                <figure>
+                  <img src="stack3.png" alt="Platform 2 dashboard view of team comparison metrics" />
+                  <figcaption>Team comparison view across regions and operational groups.</figcaption>
+                </figure>
+                <figure>
+                  <img src="stack4.png" alt="Platform 2 dashboard view with coaching indicators" />
+                  <figcaption>Coaching insights with color-coded performance classifications.</figcaption>
+                </figure>
+                <figure>
+                  <img src="stack5.png" alt="Platform 2 dashboard monthly trend analysis view" />
+                  <figcaption>Monthly trend view for performance movement and coaching impact.</figcaption>
+                </figure>
+                <figure>
+                  <img src="stack-semantic.png" alt="Semantic model diagram for workforce stack ranking platform" />
+                  <figcaption>Semantic model architecture powering reusable metrics and rankings.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details>
+        <summary>Platform #3 — Attendance Occurrence Management &amp; Workforce Accountability Platform</summary>
+        <div class="card-content">
+          <div class="preview">
+            <img src="occurrences.png" alt="Attendance occurrence tracking and accountability dashboard preview" />
+          </div>
+          <ul class="focus-list">
+            <li>Attendance Analytics</li>
+            <li>Workforce Governance</li>
+            <li>Corrective Action Tracking</li>
+            <li>Compliance Reporting</li>
+            <li>Employee Accountability</li>
+            <li>Attendance Policy Automation</li>
+            <li>Operational Analytics</li>
+          </ul>
+        </div>
+
+        <div class="card-content">
+          <article class="case-study" aria-label="Platform 3 detailed case study">
+            <div class="stack">
+              <h3>Detailed Case Study</h3>
+              <p>
+                This platform gives leadership and managers a centralized attendance governance view, combining
+                occurrence monitoring, policy-based point tracking, and employee-level accountability insights.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Objective</h4>
+              <p>
+                Improve workforce accountability by providing transparent attendance reporting, early risk detection,
+                and policy-aligned tracking for coaching and corrective action decisions.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Dashboard Page 1 — Attendance Occurrence Overview</h4>
+              <ul class="meta-list">
+                <li>Organization-wide view of attendance points, trends, and threshold proximity.</li>
+                <li>Highlights employees with elevated attendance risk and immediate follow-up needs.</li>
+                <li>Tracks total points gained and points removed through policy deductions.</li>
+                <li>Risk-based color coding: Low Risk, Elevated Risk, Coaching Recommended, High Concern.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Dashboard Page 2 — Attendance Activity Tracking</h4>
+              <ul class="meta-list">
+                <li>Detailed occurrence audit trail with employee, date, reason, comments, and points assigned.</li>
+                <li>Supports event-level review for late arrivals, call-outs, and attendance concern events.</li>
+                <li>Date-based filtering for last 30 days, current period, historical trends, and long-term analysis.</li>
+                <li>Enables coaching, dispute resolution, policy reviews, and performance discussions.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Dashboard Page 3 — Individual Employee Attendance Analysis</h4>
+              <ul class="meta-list">
+                <li>Employee-level profile for one-on-one coaching and attendance planning.</li>
+                <li>Key metrics include Total Gained Points, Dropped Points, and Active Points.</li>
+                <li>Displays gained occurrences and six-month deduction history with full point traceability.</li>
+                <li>Supports informed decisions on corrective action and attendance improvement progress.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Business Questions Answered</h4>
+              <ul class="meta-list">
+                <li>Why and when was an attendance occurrence assigned?</li>
+                <li>How many points were assigned within a selected period?</li>
+                <li>Which employees are approaching policy thresholds?</li>
+                <li>What attendance patterns are emerging across teams?</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Semantic Model &amp; Data Architecture</h4>
+              <p>
+                The attendance reporting platform is powered by a centralized Power BI semantic model designed to
+                automate attendance policy calculations and support workforce governance reporting, including active
+                point calculations, point expiration logic, historical attendance records, trend analysis, and
+                employee attendance profiles.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Impact</h4>
+              <p>
+                This dashboard improved transparency in attendance management, reduced manual point tracking effort,
+                and gave managers clearer, data-driven visibility for timely coaching and accountability decisions.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Additional Screens</h4>
+              <div class="gallery">
+                <figure>
+                  <img src="occurrences2.png" alt="Platform 3 attendance dashboard showing occurrence and risk trends" />
+                  <figcaption>Occurrence overview: attendance trends, thresholds, and risk indicators.</figcaption>
+                </figure>
+                <figure>
+                  <img src="occurrences3.png" alt="Platform 3 attendance detail dashboard with employee activity log" />
+                  <figcaption>Attendance activity view: event-level audit trail and manager comments.</figcaption>
+                </figure>
+                <figure>
+                  <img src="occur-semantic.png" alt="Semantic model diagram for attendance occurrence analytics platform" />
+                  <figcaption>Semantic model: policy logic, point lifecycle, and reusable workforce metrics.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details>
+        <summary>Platform #4 — Workforce Scheduling &amp; Staffing Visibility Platform</summary>
+        <div class="card-content">
+          <div class="preview">
+            <img src="schedule.png" alt="Workforce scheduling and staffing visibility dashboard preview" />
+          </div>
+          <ul class="focus-list">
+            <li>Workforce Management</li>
+            <li>Scheduling Analytics</li>
+            <li>Staffing Visibility</li>
+            <li>Capacity Planning</li>
+            <li>Resource Allocation</li>
+            <li>Coverage Analysis</li>
+            <li>Operational Planning</li>
+            <li>Workforce Optimization</li>
+          </ul>
+        </div>
+
+        <div class="card-content">
+          <article class="case-study" aria-label="Platform 4 detailed case study">
+            <div class="stack">
+              <h3>Detailed Case Study</h3>
+              <p>
+                This platform provides leadership with a centralized scheduling visibility framework for staffing
+                coverage, shift allocation, and operational planning across the workweek.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Challenge</h4>
+              <p>
+                Existing scheduling tools contained the required data but did not provide a consolidated managerial
+                view for fast decision-making during operations meetings and workforce planning discussions.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Leadership Needs</h4>
+              <ul class="meta-list">
+                <li>Review staffing coverage quickly by day and by shift.</li>
+                <li>Identify which employees are scheduled and when.</li>
+                <li>Evaluate start/end time coverage across operational hours.</li>
+                <li>Monitor staffing distribution patterns throughout the week.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Workforce Scheduling Framework</h4>
+              <ul class="meta-list">
+                <li>Instant visibility into organization-wide schedule coverage.</li>
+                <li>Supports daily and weekly staffing analysis without switching systems.</li>
+                <li>Designed for quick answers during planning and staffing reviews.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Business Questions Answered</h4>
+              <ul class="meta-list">
+                <li>Who is scheduled today?</li>
+                <li>How many employees are scheduled each day?</li>
+                <li>Which shifts have the highest staffing levels?</li>
+                <li>Which employees are assigned to each shift?</li>
+                <li>What coverage patterns exist across the workweek?</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Staffing Distribution Dimensions</h4>
+              <ul class="meta-list">
+                <li>Day of Week</li>
+                <li>Shift Start Time</li>
+                <li>Shift End Time</li>
+                <li>Scheduled Staff Count</li>
+                <li>Employee Name</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Business Impact</h4>
+              <p>
+                The report gives operations leaders a complete staffing visibility layer, reducing manual effort and
+                improving schedule planning, coverage evaluation, and day-to-day workforce coordination.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Additional Screens</h4>
+              <div class="gallery">
+                <figure>
+                  <img src="schedule2.png" alt="Platform 4 scheduling dashboard showing daily staffing distribution by shift" />
+                  <figcaption>Staffing overview: daily coverage distribution and shift-level headcount visibility.</figcaption>
+                </figure>
+                <figure>
+                  <img src="schedule3.png" alt="Platform 4 scheduling dashboard with detailed employee shift assignments" />
+                  <figcaption>Shift assignment detail: employee-level schedule visibility for operations planning.</figcaption>
+                </figure>
+                <figure>
+                  <img src="schedule4.png" alt="Platform 4 scheduling analytics view showing workforce coverage trends" />
+                  <figcaption>Coverage trend view: weekly patterns and operational staffing insights.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+      </details>
+
+      <details>
+        <summary>Platform #5 — PTO &amp; Time Off Management Analytics Platform</summary>
+        <div class="card-content">
+          <div class="preview">
+            <img src="calendar.png" alt="PTO and time off management analytics dashboard preview" />
+          </div>
+          <ul class="focus-list">
+            <li>Leave Management Analytics</li>
+            <li>PTO Tracking</li>
+            <li>Workforce Availability</li>
+            <li>Staffing Impact Analysis</li>
+            <li>Capacity Planning</li>
+            <li>Resource Management</li>
+            <li>Operational Reporting</li>
+            <li>Workforce Planning</li>
+          </ul>
+        </div>
+
+        <div class="card-content">
+          <article class="case-study" aria-label="Platform 5 detailed case study">
+            <div class="stack">
+              <h3>Detailed Case Study</h3>
+              <p>
+                This platform centralizes PTO and leave visibility so leadership can monitor workforce availability,
+                review time-off trends, and make faster staffing decisions.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Challenge</h4>
+              <p>
+                The organization needed one place to manage PTO balances, PTO usage, sick leave, call-outs, and other
+                approved absences while understanding staffing impact across teams and reporting periods.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Key Features</h4>
+              <ul class="meta-list">
+                <li>Daily time-off calendar view for quick month-level absence visibility.</li>
+                <li>Employee-level leave tracking for faster supervisor follow-up.</li>
+                <li>Monthly leave analysis by employee, team, and period.</li>
+                <li>Real-time availability banner to surface active out-of-office staffing impacts.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Operational Use Cases</h4>
+              <ul class="meta-list">
+                <li>Workforce planning for upcoming absences and coverage allocation.</li>
+                <li>PTO balance reviews between employees and supervisors.</li>
+                <li>Staffing forecasting to detect potential shortages in advance.</li>
+                <li>Business reviews to evaluate seasonal leave utilization trends.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>PTO Management Framework</h4>
+              <ul class="meta-list">
+                <li>Tracks initial PTO allocation, PTO hours used, and remaining balance.</li>
+                <li>Interactive filters for employee, team, month, and leave type.</li>
+                <li>Dynamic visual updates across all report views based on selections.</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Leave Categories Supported</h4>
+              <ul class="meta-list">
+                <li><strong>PTO</strong> — Planned vacation and personal leave</li>
+                <li><strong>Sick</strong> — Illness-related absences</li>
+                <li><strong>Call-Out</strong> — Unplanned absences</li>
+                <li><strong>Other</strong> — Additional approved leave categories</li>
+              </ul>
+            </div>
+
+            <div class="stack">
+              <h4>Semantic Model &amp; Data Architecture</h4>
+              <p>
+                A centralized semantic model powers PTO calculations, leave balances, staffing summaries, and
+                dashboard visualizations to keep metrics consistent across all leave and availability reporting views.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Business Impact</h4>
+              <p>
+                The report improved visibility into leave utilization and workforce availability, enabling stronger
+                staffing readiness, better planning decisions, and clearer employee-level leave accountability.
+              </p>
+            </div>
+
+            <div class="stack">
+              <h4>Additional Screens</h4>
+              <div class="gallery">
+                <figure>
+                  <img src="calendar2.png" alt="Platform 5 PTO dashboard showing monthly leave calendar and absence patterns" />
+                  <figcaption>Monthly leave calendar: PTO, sick leave, and call-out visibility by day.</figcaption>
+                </figure>
+                <figure>
+                  <img src="calendar3.png" alt="Platform 5 PTO dashboard with employee leave balances and filter controls" />
+                  <figcaption>Employee leave tracking: balances, usage, and team-level filter analysis.</figcaption>
+                </figure>
+                <figure>
+                  <img src="calendar4.png" alt="Platform 5 PTO analytics view for staffing impact and workforce availability" />
+                  <figcaption>Staffing impact insights: availability trends and operational readiness planning.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+    </section>
+
+    <section class="contact" aria-label="Contact">
+      <strong>Let’s connect:</strong>
+      <p>
+        <a href="mailto:joscan555@gmail.com">joscan555@gmail.com</a><br />
+        <a href="https://www.linkedin.com/in/josuecano0817" target="_blank" rel="noreferrer noopener">LinkedIn Profile</a>
+      </p>
+    </section>
+
+    <footer>Thanks for visiting my Business Analytics Portfolio.</footer>
+  </main>
+</body>
+</html>
