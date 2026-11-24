@@ -285,6 +285,129 @@
       max-width: 92ch;
     }
 
+    .article-section {
+      margin-top: 2.35rem;
+      padding: 1.05rem;
+      border: 1px solid rgba(55, 74, 136, 0.55);
+      border-radius: 16px;
+      background: linear-gradient(160deg, rgba(16, 24, 48, 0.72), rgba(12, 17, 34, 0.72));
+      box-shadow: var(--shadow);
+    }
+
+    .article-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .article-group {
+      background: linear-gradient(160deg, rgba(19, 28, 56, 0.78), rgba(17, 23, 44, 0.78));
+      border: 1px solid rgba(72, 94, 169, 0.45);
+      border-radius: 12px;
+      padding: 0.85rem 0.9rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      align-items: start;
+      column-gap: 1rem;
+      row-gap: 0.45rem;
+    }
+
+    .article-group h3 {
+      margin: 0;
+      color: var(--accent-2);
+      font-size: 1rem;
+      line-height: 1.35;
+      position: sticky;
+      top: 0;
+    }
+
+    .article-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .article-item {
+      border: 1px solid rgba(67, 86, 150, 0.45);
+      border-radius: 10px;
+      padding: 0.7rem 0.78rem;
+      background: rgba(15, 21, 42, 0.74);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .article-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(112, 148, 255, 0.6);
+      background: rgba(18, 26, 50, 0.88);
+    }
+
+    .article-item h4 {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #e8ecff;
+      line-height: 1.4;
+    }
+
+    .article-item p {
+      margin: 0.45rem 0 0;
+      color: #b5bfdc;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      max-width: 90ch;
+    }
+
+    .article-link {
+      margin-top: 0.45rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .article-link:hover {
+      text-decoration: underline;
+    }
+
+    .article-note {
+      margin: 0.45rem 0 0;
+      padding: 0.55rem 0.65rem;
+      border-radius: 8px;
+      border: 1px dashed rgba(124, 147, 216, 0.55);
+      background: rgba(16, 25, 50, 0.5);
+      color: #bdc8eb;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .article-impact {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(105, 134, 219, 0.5);
+      border-radius: 12px;
+      background: linear-gradient(165deg, rgba(17, 27, 56, 0.8), rgba(13, 20, 40, 0.8));
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+    }
+
+    .article-impact h3 {
+      margin: 0;
+      color: var(--accent-2);
+      font-size: 1rem;
+    }
+
+    .article-impact p {
+      margin: 0.55rem 0 0;
+      color: #c2cbea;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
     .contact {
       margin-top: 2rem;
       padding: 1.1rem 1.2rem;
@@ -322,13 +445,26 @@
         top: 0.75rem;
         right: 0.75rem;
       }
+
+      .article-section {
+        padding: 0.85rem;
+      }
+
+      .article-group {
+        grid-template-columns: 1fr;
+        row-gap: 0.7rem;
+      }
+
+      .article-group h3 {
+        position: static;
+      }
     }
   </style>
 </head>
 <body>
   <main class="container">
     <section class="hero" aria-label="Introduction">
-      <h1>Josue Cano — Business Analytics Portfolio</h1>
+      <h1>Josue Cano — Technical Business Portfolio</h1>
       <p class="subtitle">Workforce Management Analyst • Technical Writer • Power BI Developer</p>
       <p>
         I’m passionate about transforming data into meaningful business insights. My background spans Technical
@@ -341,7 +477,7 @@
     </section>
 
     <section aria-label="Featured Projects">
-      <h2>Featured Platforms</h2>
+      <h2>Featured Power BI Platforms</h2>
       <p class="section-note">Click each platform to expand preview and focus areas.</p>
 
       <details>
@@ -912,6 +1048,128 @@
       </details>
     </section>
 
+    <section class="article-section" aria-label="Technical Articles">
+      <h2>Technical Articles</h2>
+      <p class="section-note">
+        Practical documentation and troubleshooting guides for technical support and business operations teams. These
+        articles focus on resolving common issues, improving workflow efficiency, and enhancing customer experience.
+      </p>
+
+      <div class="article-grid">
+        <article class="article-group">
+          <h3>Troubleshooting &amp; Resolution Guides</h3>
+          <ul class="article-list">
+            <li class="article-item">
+              <h4>Finance Error Resolution Guide</h4>
+              <p>
+                Created a troubleshooting guide for resolving a common finance error frequently encountered by retail
+                locations.
+              </p>
+              <p>
+                The article helps help desk agents verify customer eligibility, identify common financing issues,
+                determine when cancellations are necessary, and streamline escalations to Tier 2 support.
+              </p>
+              <p>This improves first-contact resolution and reduces transaction delays.</p>
+              <p class="article-note">
+                For security reasons, full content is restricted due to sensitive proprietary information. If you would
+                like access, feel free to contact me.
+              </p>
+              <a class="article-link" href="#" aria-label="Read article: Finance Error Resolution Guide">Read article →</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="article-group">
+          <h3>Support Documentation &amp; Templates</h3>
+          <ul class="article-list">
+            <li class="article-item">
+              <h4>Retail Help Desk Ticketing Template</h4>
+              <p>
+                Created a structured template and workflow that serves as the primary documentation tool for daily Tier
+                1 support operations.
+              </p>
+              <p>
+                The template captures detailed troubleshooting steps, issue categorization, and resolution details for
+                hardware, software, network, account-related, and porting-related incidents.
+              </p>
+              <p>
+                This standardized approach improved knowledge sharing, reduced missing escalation details, and
+                strengthened the organization’s ability to track recurring issues and identify process improvements.
+              </p>
+              <p>
+                The resulting data supports monthly business reviews, trend analysis, training initiatives, and
+                continuous improvement efforts across the help desk center.
+              </p>
+              <a class="article-link" href="https://joscnaa.github.io/RetailHelpdeskTemplate/" target="_blank" aria-label="Visit Retail Help Desk Ticketing Template">View Template →</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="article-group">
+          <h3>Knowledge Base Development</h3>
+          <ul class="article-list">
+            <li class="article-item">
+              <h4>Dealer Hardware Troubleshooting Knowledge Base</h4>
+              <p>
+                Designed and developed an interactive troubleshooting guide that gives help desk agents standardized
+                procedures for diagnosing and resolving common retail hardware issues.
+              </p>
+              <p>
+                The guide helps support personnel quickly navigate device-specific workflows for point-of-sale systems,
+                payment terminals, receipt and full-size printers, network devices, and other retail hardware
+                components.
+              </p>
+              <p>The solution improves first-call resolution rates, reduces escalations, and increases support efficiency.</p>
+              <p class="article-note">
+                Due to sensitive proprietary information, full content is restricted. A brief view is available upon
+                request.
+              </p>
+              <a class="article-link" href="#" aria-label="Visit Dealer Hardware Troubleshooting Knowledge Base">Read article →</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="article-group">
+          <h3>Porting &amp; Escalation Workflows</h3>
+          <ul class="article-list">
+            <li class="article-item">
+              <h4>Porting Resolution Knowledge Base</h4>
+              <p>
+                Designed an interactive troubleshooting tool that helps help desk agents resolve wireless number porting
+                issues by mapping error and resolution codes to the appropriate corrective actions.
+              </p>
+              <p>
+                The solution provides guided workflows for both port-in and port-out scenarios, helping agents quickly
+                identify root causes and apply the correct resolution steps.
+              </p>
+              <p>
+                This document reduces troubleshooting time, improves support-team consistency, and enhances customer
+                experience during account transfer and number migration.
+              </p>
+              <p class="article-note">
+                Due to sensitive proprietary information, full content is restricted. A brief view is available upon
+                request.
+              </p>
+              <a class="article-link" href="#" aria-label="Visit Porting Resolution Knowledge Base">Read article →</a>
+            </li>
+          </ul>
+        </article>
+        
+      </div>
+
+      <div class="article-impact" aria-label="Additional knowledge contributions">
+        <h3>Additional Knowledge Contributions</h3>
+        <p>
+          Beyond the examples above, I have created many additional technical articles, troubleshooting guides, and
+          process documents that support daily Tier 1 and Tier 2 operations.
+        </p>
+        <p>
+          These resources have helped improve first-contact resolution, reduce escalation delays, standardize
+          troubleshooting quality, and strengthen team-wide knowledge sharing.
+        </p>
+      </div>
+    </section>
+
     <section class="contact" aria-label="Contact">
       <strong>Let’s connect:</strong>
       <p>If you have any questions or collaboration opportunities, feel free to reach out!</p>
@@ -921,7 +1179,7 @@
       </p>
     </section>
 
-    <footer>Thanks for visiting my Technical Portfolio.</footer>
+    <footer>Thanks for visiting my Technical Business Portfolio. I hope you found it insightful and informative.</footer>
   </main>
 
   <div class="lightbox" id="imageLightbox" aria-hidden="true">
