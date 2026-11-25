@@ -408,6 +408,40 @@
       line-height: 1.5;
     }
 
+    .privacy-notice {
+      margin-top: 1rem;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(113, 143, 221, 0.46);
+      border-radius: 12px;
+      background: linear-gradient(165deg, rgba(15, 24, 50, 0.78), rgba(11, 18, 37, 0.78));
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .privacy-notice h3 {
+      margin: 0;
+      color: var(--accent-2);
+      font-size: 1rem;
+    }
+
+    .privacy-notice p {
+      margin: 0.5rem 0 0;
+      color: #c8d2f0;
+      font-size: 0.89rem;
+      line-height: 1.5;
+    }
+
+    .privacy-notice ul {
+      margin: 0.55rem 0 0;
+      padding-left: 1.15rem;
+      color: #c8d2f0;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .privacy-notice li {
+      margin: 0.18rem 0;
+    }
+
     .contact {
       margin-top: 2rem;
       padding: 1.1rem 1.2rem;
@@ -479,6 +513,19 @@
     <section aria-label="Featured Projects">
       <h2>Featured Power BI Platforms</h2>
       <p class="section-note">Click each platform to expand preview and focus areas.</p>
+
+      <div class="privacy-notice" aria-label="Data privacy notice">
+        <h3>Data Privacy Notice</h3>
+        <p>
+          To protect privacy and maintain professional standards, portfolio visuals are curated for public display.
+          Any identifiable employee information is anonymized, redacted, or represented using sample/demo records.
+        </p>
+        <ul>
+          <li>No confidential business-sensitive information is intentionally disclosed.</li>
+          <li>Personal identifiers (for example, names or IDs) are masked when needed.</li>
+          <li>Dashboard examples are shared for demonstration of technical and analytical capabilities.</li>
+        </ul>
+      </div>
 
       <details>
         <summary>Platform #1 — Customer Satisfaction &amp; Quality Assurance Analytics Platform</summary>
@@ -1168,6 +1215,8 @@
           troubleshooting quality, and strengthen team-wide knowledge sharing.
         </p>
       </div>
+
+
     </section>
 
     <section class="contact" aria-label="Contact">
